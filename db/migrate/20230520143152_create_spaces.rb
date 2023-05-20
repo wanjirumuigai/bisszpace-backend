@@ -6,10 +6,10 @@ class CreateSpaces < ActiveRecord::Migration[7.0]
       t.string :image_url
       t.string :location
       t.string :type
-      t.integer :lease-cost
-      t.boolean :is_taken
+      t.integer :lease_cost
+      t.boolean :is_taken, default: false
       t.integer :user_id
-      t.integer :leased_by_id
+      t.integer :leased_by_id, default: nil
 
       t.timestamps
     end
