@@ -7,6 +7,9 @@ class CreateSpaces < ActiveRecord::Migration[7.0]
       t.string :location
       t.string :type
       t.integer :lease-cost
+      t.boolean :is_taken
+      t.integer :user_id
+      t.integer :leased_by_id
 
       t.timestamps
     end
