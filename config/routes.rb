@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :spaces, only: [:index, :show]
-  resources :reviews, only: [:index]
+  resources :reviews, only: [:index, :create]
   resources :users
 
  # get "/spaces", to: "spaces#index"
