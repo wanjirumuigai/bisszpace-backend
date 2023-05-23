@@ -17,7 +17,12 @@ def update
   space.update!(update_params)
   render json: {space: space}
     end
+def destroy
+  space = Space.find_by(id: params[:id])
+    space.destroy
+    render json: {}
 
+end
 
 
 
