@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 #
 users = User.create ([
-  {name: "Pauline", email: "pauline@bizzspace.com", password_digest: "pauline", telephone_no: "254-7124-8908", role:"user"},
-  {name: "Charles", email: "charles@bizzspace.com", password_digest: "charles", telephone_no: "254-743-6745", role:"admin"},
-  {name: "Evie", email: "evie@gmail.com", password_digest: "evie", telephone_no: "254-7124-8908", role:"user"}
+  {first_name: "Pauline", last_name: "Muigai", email: "pauline@bizzspace.com", password: "pauline", telephone_no: "254-7124-8908", role:"user"},
+  {first_name: "Charles", last_name: "Swaleh", email: "charles@bizzspace.com", password: "charles", telephone_no: "254-743-6745", role:"space_owner"},
+  {first_name: "Evie", last_name: "Kamau", email: "evie@gmail.com", password: "evie", telephone_no: "254-7124-8908", role:"user"}
 
 ])
 
