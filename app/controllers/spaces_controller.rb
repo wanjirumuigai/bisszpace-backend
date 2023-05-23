@@ -1,21 +1,21 @@
 class SpacesController < ApplicationController
 def index
   spaces = Space.all
-  render json: {spaces: spaces}, include: :reviews
+  render json: spaces
 end
 
 def show
   space = Space.find_by(id: params[:id])
   if space
-    render json: {space: space}, include: :reviews, status: :ok
+    render json: space, status: :ok
   else
     render json: { error: "Space not found" }, status: :not_found
   end
 end
 def update
   space = Space.find(params[:id])
-  space.update!(update_params)
-  render json: {space: space}
+  space.update(update_params)
+  render json: space
     end
 def destroy
   space = Space.find_by(id: params[:id])
