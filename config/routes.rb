@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :spaces, only: [:index, :show]
+  resources :spaces, only: [:index, :show, :update]
   resources :reviews, only: [:index, :create]
   resources :users
 

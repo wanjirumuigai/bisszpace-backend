@@ -12,4 +12,21 @@ def show
     render json: { error: "Space not found" }, status: :not_found
   end
 end
+def update
+  space = Space.find(params[:id])
+  space.update!(update_params)
+  render json: {space: space}
+    end
+
+
+
+
+private
+
+def create_params
+params.permit(:comment, :rating, :user_id, :space_id)
+end
+def update_params
+  params.permit(:is_taken, :leased_by_id)
+end
 end
