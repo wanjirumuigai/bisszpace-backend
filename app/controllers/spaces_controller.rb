@@ -5,8 +5,8 @@ wrap_parameters format: []
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid,
   with: :render_unprocessable_entity_response
-  def index
 
+def index
   spaces = Space.all
   render json: spaces
 end
@@ -16,19 +16,26 @@ def show
   render json: space, status: :ok
 
 end
+
+#POST 
+def create 
+  # byebug
+ space = Space.create(space_params)
+ render json: space, status: :created
+end
+
 def update
   space = Space.find(params[:id])
   space.update!(update_params)
   render json: space
     end
+
 def destroy
   space = Space.find_by(id: params[:id])
     space.destroy
     render json: {}
 
 end
-
-
 
 private
 
@@ -42,6 +49,7 @@ end
 def render_not_found_response
   render json: { error: "Listing not found" }, status: :not_found
 end
+
 def render_unprocessable_entity_response(invalid)
   render json: {
            errors: invalid.record.errors
