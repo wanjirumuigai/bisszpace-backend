@@ -119,7 +119,9 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
+
     rack-cors (2.0.1)
+
       rack (>= 2.0.0)
     rack-test (2.1.0)
       rack (>= 1.3)
@@ -177,7 +179,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.7.6p219
+   ruby 2.7.4p191
 
 BUNDLED WITH
-   2.4.13
+   2.4.2
