@@ -42,8 +42,13 @@ private
 def create_params
 params.permit(:comment, :rating, :user_id, :space_id)
 end
+
 def update_params
   params.permit(:is_taken, :leased_by_id)
+end
+
+def space_params
+  params.permit(:name, :size, :image_url, :location, :space_type, :lease_cost, :user_id)
 end
 
 def render_not_found_response
