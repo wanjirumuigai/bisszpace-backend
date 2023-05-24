@@ -2,11 +2,11 @@ class ReviewsController < ApplicationController
 
   def index
     reviews = Review.all
-    render json: {reviews: reviews}
+    render json: reviews
   end
   def create
     review = Review.create!(create_params)
-    render json: {review: review}, status: :created
+    render json: review, status: :created
   end
 
 private
