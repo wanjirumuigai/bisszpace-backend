@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+
 def index
   spaces = Space.all
   render json: spaces
@@ -34,4 +35,5 @@ end
 def update_params
   params.permit(:is_taken, :leased_by_id)
 end
+
 end
