@@ -29,4 +29,5 @@ group :development do
 end
 gem "active_model_serializers", "~> 0.10.12"
 gem 'bcrypt', '~> 3.1.7'
+gem "jwt"
 
