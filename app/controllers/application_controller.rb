@@ -1,31 +1,31 @@
 class ApplicationController < ActionController::API
+  include ActionController::Cookies
   before_action :authorized
 
-  @hmac_secret = "th1515th3m05ts3cur3pa55w0rd3v3R"
-
   def encode_token(payload)
-    JWT.encode(payload, @hmac_secret, 'HS256')
+    JWT::encode(payload, "dGgxNTE1dGgzbTA1dHMzY3VyM3BhNTV3MHJkM3YzUg")
   end
 
   def auth_header
-    request.headers['Authorization']
+    request.headers["Authorization"]
   end
 
   def decode_token
+    jwt = nil
      if auth_header
        token = auth_header.split(' ')[1]
-       begin
-        JWT.decode(token, @hmac_secret, true, {algorithm: 'HS256'})
-       rescue JWT::DecodeError
+      begin
+       jwt = JWT::decode(token, "dGgxNTE1dGgzbTA1dHMzY3VyM3BhNTV3MHJkM3YzUg", true, algorithm: 'HS256')
+      rescue JWT::DecodeError
         nil
-       end
+      end
      end
   end
 
   def current_user
     if decode_token
       user_id = decode_token[0]['user_id']
-      @user = User.find_by(id: user_id)
+      user = User.find_by(id: user_id)
     end
   end
 
