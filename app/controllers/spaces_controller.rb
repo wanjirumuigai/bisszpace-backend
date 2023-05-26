@@ -3,7 +3,7 @@ class SpacesController < ApplicationController
 wrap_parameters format: []
 
 
-skip_before_action :authorized, only: [:index]
+skip_before_action :authorized, only: [:index, :welcome]
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid,
@@ -20,8 +20,12 @@ def show
 
 end
 
-#POST 
-def create 
+def welcome
+  render json: {error: "Please login to access this page"}
+end
+
+#POST
+def create
   # byebug
  space = Space.create(space_params)
  render json: space, status: :created
