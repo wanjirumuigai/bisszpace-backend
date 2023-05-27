@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post "/login", to: "auth#create"
 get "/", to: "spaces#welcome"
 
+get "/available", to: "spaces#available"
+
 end

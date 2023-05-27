@@ -3,7 +3,7 @@ class SpacesController < ApplicationController
 wrap_parameters format: []
 
 
-skip_before_action :authorized, only: [:index, :welcome]
+skip_before_action :authorized, only: [:index, :welcome, :amount]
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid,
@@ -42,6 +42,10 @@ def destroy
     space.destroy
     render json: {}
 
+end
+def available
+  spaces = Space.where(is_take: false)
+  render json: spaces
 end
 
 private
