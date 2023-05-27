@@ -47,6 +47,10 @@ def available
   spaces = Space.where(is_taken: false)
   render json: spaces
 end
+def booked
+  spaces = Space.where(is_taken: true)
+  render json: spaces
+end
 
 private
 

@@ -9,4 +9,6 @@ get "/", to: "spaces#welcome"
 
 get "/available", to: "spaces#available"
 
+get "/booked", to: "spaces#booked"
+
 end
