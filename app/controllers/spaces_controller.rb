@@ -44,7 +44,7 @@ def destroy
 
 end
 def available
-  spaces = Space.where(is_take: false)
+  spaces = Space.where(is_taken: false)
   render json: spaces
 end
 
