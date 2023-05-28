@@ -5,9 +5,8 @@
 
 <p align="center">
   <a href="#description">Project Description</a> •
-  <a href="#live-link">Live Link</a> •
   <a href="#setup">Project Setup</a> •
-  <a href="#setup">Routes</a>
+  <a href="#routes">Routes</a> •
   <a href="#authors">Authors</a> •
   <a href="#license">License</a>
 </p>
