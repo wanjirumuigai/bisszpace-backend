@@ -3,7 +3,7 @@ class SpacesController < ApplicationController
 wrap_parameters format: []
 
 
-skip_before_action :authorized, only: [:index, :welcome, :available, :booked]
+skip_before_action :authorized, only: [:index, :welcome]
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid,
