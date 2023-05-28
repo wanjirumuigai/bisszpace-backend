@@ -16,9 +16,13 @@ This is a backend RESTful Rails API application that supports a frontend applica
 
 ## Project Setup
 Clone this repository
+
 At the terminal, change into the project directory
+
 Run bundle install to install the project's dependencies
+
 Run migrations and seed some dummy data by running rails db:migrate db:seed
+
 Run rails server to start the server
 
 ## Routes
